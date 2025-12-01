@@ -7,7 +7,6 @@ import storage.Storage;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
-
 /**
  * Tela principal (Home) do fórum.
  * Mostra a lista de posts, permite criar post, atualizar lista e deslogar.
@@ -15,6 +14,7 @@ import java.util.List;
 public class TelaHome extends JFrame {
 
     private final Usuario usuarioLogado;
+
     private final DefaultListModel<String> postListModel;
     private final JList<String> postList;
 
