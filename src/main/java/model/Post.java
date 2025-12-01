@@ -8,8 +8,6 @@ public class Post {
         this.autor = autor;
         this.conteudo = conteudo;
     }
-
     public String getAutor() { return autor; }
     public String getConteudo() { return conteudo; }
 }
-

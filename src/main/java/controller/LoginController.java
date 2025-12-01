@@ -2,6 +2,7 @@ package controller;
 
 import model.Usuario;
 import storage.Storage;
+import ui.TelaAdm;
 import ui.TelaHome;
 
 import javax.swing.*;
@@ -9,13 +10,24 @@ import java.util.Map;
 
 public class LoginController {
 
+    private static final String ADM_LOGIN = "admin";
+    private static final String ADM_SENHA = "admin123";
+
     public static void login(String login, String senha, JFrame telaLogin) {
 
         if (login == null || login.isBlank() || senha == null || senha.isBlank()) {
             JOptionPane.showMessageDialog(null, "Preencha login e senha.");
             return;
         }
+        // ===== LOGIN ADM =====
+        if (login.equals(ADM_LOGIN) && senha.equals(ADM_SENHA)) {
+            JOptionPane.showMessageDialog(null, "Bem-vindo, Administrador!");
+            telaLogin.dispose();
+            new TelaAdm().setVisible(true);
+            return;
+        }
 
+        // ========== LOGIN NORMAL ==========
         Map<String, Usuario> usuarios = Storage.carregarUsuarios();
 
         if (usuarios.containsKey(login) && usuarios.get(login).getSenha().equals(senha)) {
@@ -30,7 +42,6 @@ public class LoginController {
             JOptionPane.showMessageDialog(null, "Login inválido.");
         }
     }
-
 
     public static void cadastrar(String login, String senha) {
 

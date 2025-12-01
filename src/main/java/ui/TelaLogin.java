@@ -26,6 +26,14 @@ public class TelaLogin extends JFrame {
                             this
                     )
             );
+            login.addActionListener(e -> {
+                    String admLogin = JOptionPane.showInputDialog("Login do ADM:");
+                    String admSenha = JOptionPane.showInputDialog("Senha do ADM:");
+
+                    LoginController.login(admLogin, admSenha, this);
+            });
+            add(login);
+            add(senha);
 
             cadastrar.addActionListener(e ->
                     LoginController.cadastrar(
@@ -33,7 +41,6 @@ public class TelaLogin extends JFrame {
                             new String(senha.getPassword())
                     )
             );
-
             add(login);
             add(senha);
 
@@ -41,6 +48,7 @@ public class TelaLogin extends JFrame {
             botoes.add(entrar);
             botoes.add(cadastrar);
             add(botoes);
+            add(login);
 
             setVisible(true);
     }
