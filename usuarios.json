@@ -1,6 +1,1 @@
-{
-  "jose": {
-    "login": "jose",
-    "senha": "123"
-  }
-}
+{"jose":{"login":"jose","senha":"123"},"paulim":{"login":"paulim","senha":"123"}}
