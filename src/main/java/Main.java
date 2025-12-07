@@ -1,5 +1,3 @@
-package main;
-
 import ui.TelaLogin;
 
 public class Main {
